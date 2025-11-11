@@ -1,0 +1,71 @@
+// src/pages/App.jsx
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+
+// Pages
+import Home from "./Home.jsx";
+import Login from "./Login.jsx";
+import Register from "./Register.jsx";
+import FigmaDashboard from "./FigmaDashboard.jsx";
+import Tests from "./Tests.jsx";
+import Feedback from "./Feedback.jsx";
+import Settings from "./Settings.jsx";           
+import Exam from "./Exam.jsx";
+
+// Route guard
+import ProtectedRoute from "../routes/ProtectedRoute.jsx";
+
+export default function App() {
+  return (
+    <Routes>
+      {/* Trang mặc định: Home (Navbar + Slider + NotificationList) */}
+      <Route path="/" element={<Home />} />
+
+      {/* Public */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      {/* Private */}
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <FigmaDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/tests"
+        element={
+          <ProtectedRoute>
+            <Tests />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/exam/:id" element={<ProtectedRoute><Exam /></ProtectedRoute>} />
+      <Route
+        path="/feedback"                        
+        element={
+          <ProtectedRoute>
+            <Feedback />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} /> 
+      {/* (Tuỳ chọn) Chi tiết 1 bài thi */}
+      {/*
+      <Route 
+        path="/tests/:id"
+        element={
+          <ProtectedRoute>
+            <TestDetail />
+          </ProtectedRoute>
+        }
+      />
+      */}
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
