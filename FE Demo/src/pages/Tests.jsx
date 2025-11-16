@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import DashboardNavbar from "../components/DashboardNavbar.jsx";
 
 const ROWS = [
-  { id: "hsa-math-1",  name: "HSA Mathematics Practise Test #1", type: "Adaptive", duration: 75,  target: 50,  action: "Start"  },
-  { id: "hsa-read-1",  name: "HSA Reading Practise Test #1",     type: "Fixed",    duration: 60,  target: 50,  action: "Start"  },
-  { id: "hsa-write-3", name: "HSA Writing Practise Test #3",     type: "Adaptive", duration: 60,  target: 50,  action: "Resume" },
-  { id: "hsa-total-2", name: "HSA Total Skill Test #2",          type: "Fixed",    duration: 195, target: 150, action: "Start"  },
+  { id: "hsa-math-1",  name: "Cách lọ 5 quả 1 ngày #1", type: "Adaptive", duration: 75,  target: 50,  action: "Start"  },
+  { id: "hsa-read-1",  name: "dng đẹp trai vãi cả l",     type: "Fixed",    duration: 60,  target: 50,  action: "Start"  },
+  { id: "hsa-write-3", name: "Top những cách có người yêu",     type: "Adaptive", duration: 60,  target: 50,  action: "Resume" },
+  { id: "hsa-total-2", name: "Cách trả lời câu hỏi 'anh có yêu em không'",          type: "Fixed",    duration: 195, target: 150, action: "Start"  },
 ];
 
 export default function Tests() {

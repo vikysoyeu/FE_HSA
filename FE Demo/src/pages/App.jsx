@@ -11,6 +11,8 @@ import Tests from "./Tests.jsx";
 import Feedback from "./Feedback.jsx";
 import Settings from "./Settings.jsx";           
 import Exam from "./Exam.jsx";
+import HistoryPage from "./HistoryPage.jsx"; 
+
 
 // Route guard
 import ProtectedRoute from "../routes/ProtectedRoute.jsx";
@@ -52,6 +54,7 @@ export default function App() {
         }
       />
       <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} /> 
+      <Route path="/history" element={<HistoryPage />} />
       {/* (Tuỳ chọn) Chi tiết 1 bài thi */}
       {/*
       <Route 
