@@ -14,6 +14,7 @@ import Exam from "./Exam.jsx";
 import HistoryPage from "./HistoryPage.jsx";
 import Stats from "./Stats.jsx";
 import HistoryDetail from "./HistoryDetails.jsx";
+import Guide from "./Guide.jsx";
 
 // Route guard
 import ProtectedRoute from "../routes/ProtectedRoute.jsx";
@@ -27,6 +28,7 @@ export default function App() {
       {/* Public */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/huong-dan" element={<Guide />} />
 
       {/* Private (cần ProtectedRoute) */}
       <Route
