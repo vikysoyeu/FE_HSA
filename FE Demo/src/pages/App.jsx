@@ -9,11 +9,11 @@ import Register from "./Register.jsx";
 import FigmaDashboard from "./FigmaDashboard.jsx";
 import Tests from "./Tests.jsx";
 import Feedback from "./Feedback.jsx";
-import Settings from "./Settings.jsx";           
+import Settings from "./Settings.jsx";
 import Exam from "./Exam.jsx";
-import HistoryPage from "./HistoryPage.jsx"; 
-import Stats from "./Stats.jsx" ; 
-
+import HistoryPage from "./HistoryPage.jsx";
+import Stats from "./Stats.jsx";
+import HistoryDetail from "./HistoryDetails.jsx";
 
 // Route guard
 import ProtectedRoute from "../routes/ProtectedRoute.jsx";
@@ -21,14 +21,14 @@ import ProtectedRoute from "../routes/ProtectedRoute.jsx";
 export default function App() {
   return (
     <Routes>
-      {/* Trang mặc định: Home (Navbar + Slider + NotificationList) */}
+      {/* Trang mặc định: Home */}
       <Route path="/" element={<Home />} />
 
       {/* Public */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Private */}
+      {/* Private (cần ProtectedRoute) */}
       <Route
         path="/dashboard"
         element={
@@ -45,36 +45,44 @@ export default function App() {
           </ProtectedRoute>
         }
       />
-      <Route path="/exam/:id" element={<ProtectedRoute><Exam /></ProtectedRoute>} />
       <Route
-        path="/feedback"                        
+        path="/exam/:id"
+        element={
+          <ProtectedRoute>
+            <Exam />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/feedback"
         element={
           <ProtectedRoute>
             <Feedback />
           </ProtectedRoute>
         }
       />
-      <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} /> 
+      <Route
+        path="/settings"
+        element={
+          <ProtectedRoute>
+            <Settings />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* History: CHO DEMO nên để public – không bọc ProtectedRoute */}
       <Route path="/history" element={<HistoryPage />} />
+      <Route path="/history/:attemptId" element={<HistoryDetail />} />
+
+      {/* Stats: vẫn có thể giữ là private nếu muốn */}
       <Route
         path="/stats"
         element={
           <ProtectedRoute>
             <Stats />
-              </ProtectedRoute>
-        }
-/>
-      {/* (Tuỳ chọn) Chi tiết 1 bài thi */}
-      {/*
-      <Route 
-        path="/tests/:id"
-        element={
-          <ProtectedRoute>
-            <TestDetail />
           </ProtectedRoute>
         }
       />
-      */}
 
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/" replace />} />
