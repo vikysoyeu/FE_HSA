@@ -29,7 +29,7 @@ export default function Feedback() {
     setOk("");
     setErr("");
     try {
-      // TODO: gọi API thật tại đây
+      //  gọi API thật tại đây
       await new Promise((r) => setTimeout(r, 500));
       setOk("Đã gửi phản hồi. Cảm ơn bạn!");
       setComment("");

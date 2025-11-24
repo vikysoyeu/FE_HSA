@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-// Component này dùng để lấy 'id' từ URL (ví dụ: /exam/dot-thi-1)
+// Component này dùng để lấy 'id' từ URL 
 export default function ExamTaking() {
   // Lấy id kỳ thi từ URL
   const { id } = useParams();
@@ -22,7 +22,7 @@ export default function ExamTaking() {
         Đang làm bài thi: {id}
       </h1>
       
-      {/* Nội dung bài thi sẽ ở đây */}
+      {/* Nội dung bài thi */}
       <div className="bg-white p-6 rounded-lg shadow-md min-h-[400px]">
         <h2 className="text-xl font-semibold mb-4">Câu hỏi 1: ...</h2>
         <p className="text-gray-700">

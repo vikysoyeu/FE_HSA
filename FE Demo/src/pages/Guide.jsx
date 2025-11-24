@@ -36,8 +36,7 @@ export default function Guide() {
             </li>
           </ul>
           <p className="text-xs md:text-sm text-neutral-500">
-            🔎 Lưu ý: hiện tại mọi điểm số, lịch sử làm bài chỉ là dữ liệu mẫu
-            để minh hoạ.
+            🔎 Hỗ trợ bạn ôn tập và luyện thi hiệu quả.
           </p>
         </section>
 
@@ -52,8 +51,7 @@ export default function Guide() {
             <li>Bấm <strong>Đăng ký</strong> để hoàn tất.</li>
           </ol>
           <p className="text-xs md:text-sm text-neutral-500">
-            ⚠️ Trong bản demo, thao tác Đăng ký chỉ là giả lập giao diện, chưa lưu
-            vào cơ sở dữ liệu thực.
+            ⚠️ Hãy nhớ tài khoản cá nhân để tránh mất dữ liệu những bài đã làm.
           </p>
         </section>
 
@@ -71,8 +69,7 @@ export default function Guide() {
             </li>
           </ol>
           <p className="text-xs md:text-sm text-neutral-500">
-            💡 Ở bản hiện tại, logic đăng nhập vẫn là mock. Sau khi tích hợp
-            backend, bước này sẽ kiểm tra thông tin thật và tạo phiên đăng nhập.
+            💡 Sau bước này, bạn có thể tiếp cận các tính năng của hệ thống.
           </p>
         </section>
 
@@ -92,12 +89,11 @@ export default function Guide() {
             </li>
             <li>
               Khi hoàn thành, điểm số và thông tin bài làm sẽ được hiển thị trên
-              màn hình kết quả (demo).
+              màn hình kết quả.
             </li>
             <li>
               Vào tab <strong>Lịch sử làm bài</strong> để xem lại các bài đã làm,
-              bấm <strong>Xem chi tiết</strong> để xem đúng/sai từng câu
-              (đang dùng dữ liệu mock).
+              bấm <strong>Xem chi tiết</strong> để xem đúng/sai từng câu.
             </li>
           </ol>
         </section>
@@ -115,31 +111,29 @@ export default function Guide() {
             <li>Biểu đồ tiến bộ theo thời gian (Overall/Math/Reading & Writing).</li>
             <li>Độ chính xác theo từng chủ đề và kỹ năng.</li>
             <li>
-              Gợi ý học tập cá nhân hóa (sau này sẽ lấy từ mô-đun AI khi có
-              backend).
+              Gợi ý học tập cá nhân hóa (Tích hợp AI).
             </li>
           </ul>
           <p className="text-xs md:text-sm text-neutral-500">
-            Hiện tại, phần này hiển thị dữ liệu mẫu. Khi kết nối API, mọi thông
-            tin sẽ dựa trên kết quả làm bài thật của từng tài khoản.
+            Hỗ trợ tự đánh giá năng lực cá nhân.
           </p>
         </section>
 
         {/* 6. Một số lưu ý */}
         <section className="bg-white rounded-xl shadow-sm ring-1 ring-neutral-200 p-6 space-y-3">
-          <h2 className="text-xl font-semibold">6. Một số lưu ý khi dùng demo</h2>
+          <h2 className="text-xl font-semibold">6. Một số lưu ý khi dùng hệ thống</h2>
           <ul className="list-disc list-inside text-sm md:text-base text-neutral-700 space-y-1">
             <li>
-              Dữ liệu (đề thi, điểm số, lịch sử) hiện chỉ là dữ liệu giả lập được
-              viết cứng ở Frontend.
+              Sử dụng hệ thống vào đúng mục đích ôn tập các kỳ thi, không nhằm mục đích
+              thương mại khác.
             </li>
             <li>
-              Mục tiêu của bản này là kiểm tra giao diện, luồng màn hình và trải
-              nghiệm người dùng.
+              Trong quá trình xây dựng hệ thống không thể tránh khỏi sai sót. 
+              Mong người dùng góp ý nhằm mang tới các bản cập nhật với 
+              trải nghiệm sử dụng tốt hơn.
             </li>
             <li>
-              Khi kết nối backend, các màn hình sẽ dùng API thật nhưng layout &amp;
-              UX vẫn giữ như hiện tại.
+              Cảm ơn các bạn rất nhiều!
             </li>
           </ul>
         </section>

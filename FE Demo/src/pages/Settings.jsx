@@ -19,7 +19,7 @@ export default function Settings() {
     if (nextPw !== nextPw2) return setErr("Mật khẩu mới nhập lại không khớp.");
     setLoading(true);
     try {
-      // Gọi API đổi mật khẩu (điều chỉnh endpoint theo backend của bạn)
+      // Gọi API đổi mật khẩu (chỉnh endpoint)
       const res = await apiPost("/api/auth/change-password", {
         currentPassword: curr,
         newPassword: nextPw,

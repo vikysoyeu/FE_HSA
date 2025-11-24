@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ExamList() {
-  // Dữ liệu giả, sau này thay bằng API
+  // Dữ liệu giả, thay bằng API sau
   const exams = [
     { id: 'dot-thi-1', title: 'Đợt thi HSA-2501' },
     { id: 'dot-thi-2', title: 'Đợt thi HSA-2502' },

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DashboardNavbar from "../components/DashboardNavbar.jsx";
 
-/** Mock dữ liệu bài thi (thay bằng API khi có) */
+/** Mock dữ liệu bài thi (thay bằng API sau) */
 const MOCK_EXAM = {
   title: "HSA Total Skill #2",
   durationSec: 60 * 60, // 60 phút
@@ -109,7 +109,7 @@ export default function Exam() {
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
       <DashboardNavbar />
 
-      {/* Top bar: thời gian + tiêu đề + nút nộp */}
+      {/* thời gian + tiêu đề + nút nộp */}
       <div className="sticky top-[56px] z-30 bg-neutral-200/70 backdrop-blur border-b border-neutral-300">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
           <div className="text-sm font-medium">

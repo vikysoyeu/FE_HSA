@@ -36,7 +36,7 @@ export default function Login() {
 
   return (
     <div className="relative min-h-screen">
-      {/* Nền ảnh giống Register */}
+      {/* Background */}
       <img
         src="/background.png"
         alt=""
@@ -47,7 +47,7 @@ export default function Login() {
             "linear-gradient(135deg,#4f46e5,#9333ea,#ec4899)";
         }}
       />
-      {/* Overlay (tùy chỉnh độ tối: /10 /20 /40) */}
+      {/* Overlay */}
       <div className="fixed inset-0 -z-10 bg-black/20" />
 
       {/* Nội dung */}

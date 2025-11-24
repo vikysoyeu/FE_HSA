@@ -33,7 +33,7 @@ export default function Register() {
 
   return (
     <div className="relative min-h-screen">
-      {/* Nền */}
+      {/* Background */}
       <img
         src="/background.png"
         alt=""

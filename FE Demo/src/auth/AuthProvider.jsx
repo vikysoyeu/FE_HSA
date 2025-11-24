@@ -7,7 +7,7 @@ export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null); // {email}
   const isAuthenticated = !!user;
 
-  // giả lập API login (bạn thay bằng call thật)
+  // giả lập API login 
   const login = async (email, password) => {
     // TODO: gọi API thật rồi kiểm tra token
     await new Promise(r => setTimeout(r, 400));
