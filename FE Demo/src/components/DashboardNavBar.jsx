@@ -13,7 +13,7 @@ export default function DashboardNavbar() {
     { to: "/dashboard",  label: "Màn hình chính" },
     { to: "/tests",      label: "Bài thi" },
     { to: "/history",    label: "Lịch sử làm bài" } ,
-    { to: "/stats",      label: "Thống kê", disabled: true },
+    { to: "/stats",      label: "Thống kê" },
     { to: "/feedback",   label: "Phản hồi" },
   ];
 
