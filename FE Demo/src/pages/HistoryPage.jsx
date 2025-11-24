@@ -1,7 +1,9 @@
+// src/pages/HistoryPage.jsx
 import React from "react";
+import DashboardNavbar from "../components/DashboardNavbar.jsx";
 
 export default function HistoryPage() {
-  // Demo data lấy từ backend khi hoàn thiện 
+  // Demo data – sau nối API thì thay bằng dữ liệu thật
   const history = [
     {
       id: 1,
@@ -36,60 +38,81 @@ export default function HistoryPage() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto mt-6 px-4 pb-10">
-      <h1 className="text-2xl font-semibold mb-6 text-gray-800">
-        Lịch sử làm bài
-      </h1>
+    <div className="min-h-screen bg-neutral-50 text-neutral-900">
+      {/* thanh bar trên cùng */}
+      <DashboardNavbar />
 
-      {/* Card tổng */}
-      <div className="bg-white rounded-xl shadow p-6">
-        {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="text-gray-600 border-b">
-                <th className="py-3 font-medium">Bài thi</th>
-                <th className="py-3 font-medium">Ngày làm</th>
-                <th className="py-3 font-medium">Điểm</th>
-                <th className="py-3 font-medium">Đúng / Tổng</th>
-                <th className="py-3 font-medium">Thời gian</th>
-                <th className="py-3 font-medium">Trạng thái</th>
-                <th className="py-3 font-medium">Thao tác</th>
-              </tr>
-            </thead>
+      <main className="max-w-6xl mx-auto px-6 py-10">
+        {/* tiêu đề giống “Test” */}
+        <h1 className="text-5xl font-extrabold mb-8">Lịch sử làm bài</h1>
 
-            <tbody>
-              {history.map((h) => (
-                <tr key={h.id} className="border-b hover:bg-gray-50">
-                  <td className="py-4">{h.name}</td>
-                  <td>{h.date}</td>
-                  <td className="font-semibold">{h.score}</td>
-                  <td>
-                    {h.correct}/{h.total}
-                  </td>
-                  <td>{h.time}</td>
-                  <td>
-                    {h.status === "Completed" ? (
-                      <span className="px-2 py-1 text-xs rounded bg-green-100 text-green-800">
-                        Completed
-                      </span>
-                    ) : (
-                      <span className="px-2 py-1 text-xs rounded bg-yellow-100 text-yellow-800">
-                        In progress
-                      </span>
-                    )}
-                  </td>
-                  <td>
-                    <button className="px-3 py-1.5 text-sm bg-black text-white rounded-md hover:bg-gray-900">
-                      Xem chi tiết
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* card trắng + header xám giống Tests */}
+        <div className="bg-white rounded-md shadow-md ring-1 ring-neutral-200 overflow-hidden">
+          {/* Header bảng – y xì style Tests.jsx */}
+          <div className="hidden md:grid grid-cols-12 bg-neutral-100 px-6 py-3 text-sm font-semibold">
+            <div className="col-span-4">Name</div>
+            <div className="col-span-2">Date</div>
+            <div className="col-span-2">Score</div>
+            <div className="col-span-2">Time</div>
+            <div className="col-span-1">Status</div>
+            <div className="col-span-1 text-right"></div>
+          </div>
+
+          {/* Rows */}
+          {history.map((h, i) => (
+            <div
+              key={h.id}
+              className={`grid grid-cols-12 items-center px-6 py-4 text-sm md:text-base ${
+                i !== history.length - 1 ? "border-b border-neutral-100" : ""
+              }`}
+            >
+              {/* Name */}
+              <div className="col-span-12 md:col-span-4">
+                <div className="font-medium">{h.name}</div>
+                {/* labels cho mobile */}
+                <div className="mt-1 text-xs text-neutral-500 md:hidden">
+                  {h.date} • {h.score} • {h.time}
+                </div>
+              </div>
+
+              {/* Date */}
+              <div className="hidden md:block md:col-span-2">{h.date}</div>
+
+              {/* Score */}
+              <div className="hidden md:block md:col-span-2 font-semibold">
+                {h.score} ({h.correct}/{h.total})
+              </div>
+
+              {/* Time */}
+              <div className="hidden md:block md:col-span-2">{h.time}</div>
+
+              {/* Status */}
+              <div className="hidden md:block md:col-span-1">
+                {h.status === "Completed" ? (
+                  <span className="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
+                    Completed
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800">
+                    In progress
+                  </span>
+                )}
+              </div>
+
+              {/* Action */}
+              <div className="col-span-12 md:col-span-1 md:text-right mt-3 md:mt-0">
+                <button
+                  className="px-4 py-1.5 rounded-md text-white text-sm font-semibold
+                             bg-indigo-600 hover:bg-indigo-700
+                             focus:outline-none focus:ring-2 focus:ring-indigo-200"
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
+      </main>
     </div>
   );
 }
